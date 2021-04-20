@@ -18,6 +18,8 @@ class tinder_bot():
         base_window = self.driver.window_handles[0]
         self.driver.switch_to_window(self.driver.window_handles[1])
         #pop up window
+        fb_cookies = self.driver.find_element_by_xpath('//*[@title="Akceptuj wszystkie"]')
+        fb_cookies.click()
         fb_email = self.driver.find_element_by_xpath('//*[@id="email"]')
         fb_email.send_keys(login)
         fb_password = self.driver.find_element_by_xpath('//*[@id="pass"]')
