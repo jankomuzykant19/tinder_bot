@@ -1,5 +1,5 @@
 # tinder_bot
-Autolike bot for tinder (19.04 working)
+Autolike bot for tinder (21.04 working)
 
 You need to download chromedriver (https://chromedriver.chromium.org) that fits your Chrome version.
 How to check Chrome version (https://help.zenplanner.com/hc/en-us/articles/204253654-How-to-Find-Your-Internet-Browser-Version-Number-Google-Chrome)
