@@ -3,7 +3,7 @@ import time
 
 class tinder_bot():
     def __init__(self):
-        self.driver = webdriver.Chrome('') #PATH TO CHROMEDRIVER
+        self.driver = webdriver.Chrome('') #PATH TO WEBDRIVER
         self.driver.maximize_window()
         self.driver.implicitly_wait(20)
 
@@ -12,11 +12,11 @@ class tinder_bot():
         login_button = self.driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div/div/header/div/div[2]/div[2]/a')
         login_button.click()
         time.sleep(2)
-        fb_button = self.driver.find_element_by_xpath('//*[@id="q840495415"]/div/div/div[1]/div/div[3]/span/div[2]/button')
+        fb_button = self.driver.find_element_by_xpath('//*[@id="t-1821667882"]/div/div/div[1]/div/div[3]/span/div[2]/button')
         fb_button.click()
         #pop up window
-        base_window = self.driver.window_handles[0] #wyskakuje okienko z logowaniem, zapisujemy stronę początkową
-        self.driver.switch_to_window(self.driver.window_handles[1]) #przelaczamy sie na okienko pop up z fb
+        base_window = self.driver.window_handles[0]
+        self.driver.switch_to_window(self.driver.window_handles[1])
         #pop up window
         time.sleep(0.75)
         fb_cookies = self.driver.find_element_by_xpath('//*[@title="Akceptuj wszystkie"]')
@@ -35,23 +35,23 @@ class tinder_bot():
         #fb_button.click() #jest jakiś bład na stronie i trzeba klikać jeszcze raz nie wiem czemu
         time.sleep(2)
 
-        pop_up_1 = self.driver.find_element_by_xpath('//*[@id="q840495415"]/div/div/div/div/div[3]/button[1]')
+        pop_up_1 = self.driver.find_element_by_xpath('//*[@id="t-1821667882"]/div/div/div/div/div[3]/button[1]')
         pop_up_1.click()
         time.sleep(0.75)
-        pop_up_2 = self.driver.find_element_by_xpath('//*[@id="q840495415"]/div/div/div/div/div[3]/button[1]')
+        pop_up_2 = self.driver.find_element_by_xpath('//*[@id="t-1821667882"]/div/div/div/div/div[3]/button[1]')
         pop_up_2.click()
         time.sleep(0.75)
-        pop_up_3 = self.driver.find_element_by_xpath('//*[@id="q-1726090805"]/div/div[2]/div/div/div[1]/button')
+        pop_up_3 = self.driver.find_element_by_xpath('//*[@id="t-93286806"]/div/div[2]/div/div/div[1]/button')
         pop_up_3.click()
         time.sleep(0.75)
 
     def close_location_pop(self):
-        location_button = self.driver.find_element_by_xpath('//*[@id="q840495415"]/div/div/div[1]/button')
+        location_button = self.driver.find_element_by_xpath('//*[@id="t-1821667882"]/div/div/div[1]/button')
         #print(location_button)
         location_button.click()
 
     def like(self):
-        like_button = self.driver.find_element_by_xpath('//*[@id="q-1726090805"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div[2]/div[4]/button')
+        like_button = self.driver.find_element_by_xpath('//*[@id="t-93286806"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div[2]/div[4]/button')
         like_button.click()
 
 
@@ -83,19 +83,19 @@ class tinder_bot():
                             fuse = False
 
     def close_match(self):
-        close_match = self.driver.find_element_by_xpath('//*[@id="q-1395719604"]/div/div/div[1]/div/div[4]/button')
+        close_match = self.driver.find_element_by_xpath('//*[@id="t237084395"]/div/div/div[1]/div/div[4]/button')
         close_match.click()
 
     def close_super_pop(self):
-        super_pop = self.driver.find_element_by_xpath('//*[@id="q840495415"]/div/div/button[2]')
+        super_pop = self.driver.find_element_by_xpath('//*[@id="t-1821667882"]/div/div/button[2]')
         super_pop.click()
 
     def close_app_pop(self):
-        app_pop = self.driver.find_element_by_xpath('//*[@id="q840495415"]/div/div/div[2]/button[2]')
+        app_pop = self.driver.find_element_by_xpath('//*[@id="t-1821667882"]/div/div/div[2]/button[2]')
         app_pop.click()
 
     def no_likes_pop_up(self, liked, pairs):
-        no_likes_pop = self.driver.find_element_by_xpath('//*[@id="q840495415"]/div/div/div[3]/button[2]')
+        no_likes_pop = self.driver.find_element_by_xpath('//*[@id="t-1821667882"]/div/div/div[3]/button[2]')
         no_likes_pop.click()
         print("No more likes left :/")
         print(f"While using you liked {liked-1} people and got {pairs} pairs")
